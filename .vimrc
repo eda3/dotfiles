@@ -76,7 +76,12 @@ call plug#begin('~/.vim/plugged')
   " Vim で Ruby の def end とかを自動入力する vim-endwise を vim-smartinput で実装してみた - 反省はしても後悔はしない http://cohama.hateblo.jp/entry/2013/11/08/013136
   Plug 'cohama/vim-smartinput-endwise'
 
+  " TypeScript を vim に導入して Syntax Highlight する · GitHub https://gist.github.com/uupaa/9224470
+  Plug 'leafgarland/typescript-vim'
 call plug#end()
+
+" TypeScript
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
 call smartinput_endwise#define_default_rules()
 

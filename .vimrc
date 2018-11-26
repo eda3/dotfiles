@@ -111,9 +111,6 @@ let g:indent_guides_guide_size = 1
 " 行番号表示
 :set nu
 
-" 行番号相対表示
-:set relativenumber
-
 " 折り返さない(戻すときは :set nowrap)
 :set nowrap 
 

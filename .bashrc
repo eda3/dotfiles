@@ -3,7 +3,7 @@ alias ll="ls -la"
 alias ltr="ls -ltra"
 
 alias vimrc='vim ~/.vimrc'
-
+'
 alias .b='. ~/.bashrc'
 alias .v='. ~/.bashrc'
 
@@ -34,6 +34,7 @@ export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 
 alias python='python3'
+alias py='python3'
 
 # プロンプト変更
 PS1="\W $ "

@@ -3,7 +3,7 @@ alias ll="ls -la"
 alias ltr="ls -ltra"
 
 alias vimrc='vim ~/.vimrc'
-'
+
 alias .b='. ~/.bashrc'
 alias .v='. ~/.bashrc'
 
@@ -41,4 +41,3 @@ PS1="\W $ "
 
 # brew dockerの警告文削除用
 alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:/} brew"
-

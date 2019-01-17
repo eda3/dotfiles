@@ -42,3 +42,11 @@ PS1="eda: $ "
 
 # brew dockerの警告文削除用
 alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:/} brew"
+
+# gitignore テンプレート
+function __gi {
+  curl -L -s https://www.gitignore.io/api/$@
+}
+
+alias gi=__gi
+

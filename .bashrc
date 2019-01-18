@@ -50,3 +50,6 @@ function __gi {
 
 alias gi=__gi
 
+# golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin

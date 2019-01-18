@@ -53,3 +53,6 @@ alias gi=__gi
 # golang
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# hub alias
+eval "$(hub alias -s)"

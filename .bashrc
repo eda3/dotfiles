@@ -45,7 +45,7 @@ alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:/} brew"
 
 # gitignore テンプレート
 function __gi {
-  curl -L -s https://www.gitignore.io/api/$@
+  curl -L -s https://www.gitignore.io/api/$@ >> ./.gitignore
 }
 
 alias gi=__gi

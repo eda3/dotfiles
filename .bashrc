@@ -29,13 +29,10 @@ alias rs='rails server'
 alias rc='rails console'
 
 # python関係
-# export PYENV_ROOT=$HOME/.pyenv
-# export PATH=$PYENV_ROOT/bin:$PATH
-# eval "$(pyenv init -)"
-
 alias python='python3'
 alias py='python3'
 alias pip='pip3'
+
 
 # プロンプト変更
 #PS1="\W $ "

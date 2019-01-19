@@ -35,6 +35,7 @@ alias rc='rails console'
 
 alias python='python3'
 alias py='python3'
+alias pip='pip3'
 
 # プロンプト変更
 #PS1="\W $ "

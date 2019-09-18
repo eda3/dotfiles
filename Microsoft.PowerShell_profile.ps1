@@ -1,3 +1,4 @@
+# PowerShellから `notepad $profile` `code $profile` でプロファイルをいじれる
 function touch {
     New-Item -type file $args
 }

@@ -32,3 +32,17 @@ function ll {
 function open {
     Invoke-Item $args
 }
+
+
+# プロンプトを変更する
+function prompt () {
+    $prompt = if (-not(([Security.Principal.WindowsPrincipal] `
+                    [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
+                    [Security.Principal.WindowsBuiltInRole] "Administrator"`
+            ))) {
+        " > "
+    }else{
+        " # " 
+    }
+    "[$($env:USERNAME)@$($env:COMPUTERNAME) " + (Split-Path (Get-Location) -Leaf) + "]${prompt}" 
+}

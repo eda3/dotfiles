@@ -56,3 +56,9 @@ export PATH=$PATH:$GOPATH/bin
 
 # hub alias
 eval "$(hub alias -s)"
+
+# Macアプリケーション
+alias vv="open /Applications/Vivaldi.app"
+
+alias ew='/Users/shodai/Dropbox/Documents/python_english_words_20190117/src/english_words.py'
+

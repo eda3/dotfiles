@@ -61,8 +61,6 @@ eval "$(hub alias -s)"
 # Macアプリケーション
 alias vv="open /Applications/Vivaldi.app"
 
-alias ew='/Users/shodai/Dropbox/Documents/python_english_words_20190117/src/english_words.py'
+alias e='~/Dropbox/Documents/python_english_words_20190117/src/english_words.py'
 
 p() { open "https://www.google.co.jp/search?domains=python.jp&sitesearch=python.jp&sourceid=google-search&q=$*"; }
-
-. ~/.privaterc

@@ -6,7 +6,7 @@ function touch {
 function gs {
     git status $args
 }
-function gl {
+function glog {
     git log --oneline --decorate --graph --branches --tags --remotes --name-status -5
 
 }

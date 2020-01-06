@@ -1,4 +1,6 @@
-# PowerShellから `notepad $profile` `code $profile` でプロファイルをいじれる
+$env:DISCORD_BOT_TOKEN="NTcyNzMxMjEzOTI4NzI2NTM4.XXjHcg.vpjFtv08mQHCA74ae7tlnDIYjlM"
+
+
 function touch {
     New-Item -type file $args
 }
@@ -6,7 +8,7 @@ function touch {
 function gs {
     git status $args
 }
-function gl {
+function glog {
     git log --oneline --decorate --graph --branches --tags --remotes --name-status -5
 
 }
@@ -33,16 +35,17 @@ function open {
     Invoke-Item $args
 }
 
+function which {
+    gcm $args
+}
 
-# プロンプトを変更する
-function prompt () {
-    $prompt = if (-not(([Security.Principal.WindowsPrincipal] `
-                    [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
-                    [Security.Principal.WindowsBuiltInRole] "Administrator"`
-            ))) {
-        " > "
-    }else{
-        " # " 
-    }
-    "[$($env:USERNAME)@$($env:COMPUTERNAME) " + (Split-Path (Get-Location) -Leaf) + "]${prompt}" 
+
+$enc = [Console]::OutputEncoding
+try
+{
+    [Console]::OutputEncoding = [Text.Encoding]::UTF8
+}
+finally
+{
+    [Console]::OutputEncoding = $enc
 }

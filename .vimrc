@@ -78,6 +78,11 @@ call plug#begin('~/.vim/plugged')
 
   " TypeScript を vim に導入して Syntax Highlight する · GitHub https://gist.github.com/uupaa/9224470
   Plug 'leafgarland/typescript-vim'
+
+  " 【VimとPythonの補完についてのメモ】
+  " https://kashewnuts.github.io/2018/08/22/jedivim_memo.html
+  Plug 'davidhalter/jedi-vim', {'for': 'python'}   " pythonファイルを編集するときだけ起動
+
 call plug#end()
 
 " TypeScript
@@ -256,3 +261,7 @@ set fileformats=unix,dos,mac
 " vimから編集中のrubyスクリプトを実行 - Qiita http://qiita.com/smison/items/2ee7aaa88299f6972c52
 nnoremap <C-e> :!ruby %<ENTER>
 nnoremap <C-e><C-r> :!rails test %<ENTER>
+
+" python を実行
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!py %
+"nnoremap <C-e> :!py %<ENTER>

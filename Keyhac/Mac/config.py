@@ -16,17 +16,17 @@ def configure(keymap):
     keymap_global["LCtrl-Shift-A"] = "D-Cmd", "D-Shift", "Left", "U-Cmd", "U-Shift"
     keymap_global["LCtrl-E"] = "D-Cmd", "Right", "U-Cmd"
     keymap_global["LCtrl-Shift-E"] = "D-Cmd", "D-Shift", "Right", "U-Cmd", "U-Shift"
-    keymap_global["LCtrl-F"] = "Right", "U-Ctrl"
-    keymap_global["LCtrl-B"] = "Left", "U-Ctrl", "U-Shift"
-    keymap_global["LCtrl-P"] = "Up", "U-Ctrl", "U-Shift"
-    keymap_global["LCtrl-N"] = "Down", "U-Ctrl", "U-Shift"
+    keymap_global["LCtrl-F"] = "Right"
+    keymap_global["LCtrl-B"] = "Left"
+    keymap_global["LCtrl-P"] = "Up"
+    keymap_global["LCtrl-N"] = "Down"
 
     # 検索
     keymap_global["LCtrl-S"] = "Cmd-F", "U-Cmd", "U-Shift"
 
     # 改行
-    keymap_global["LCtrl-M"] = ("enter",)
-    keymap_global["LCtrl-J"] = ("enter",)
+    keymap_global["LCtrl-M"] = "enter"
+    keymap_global["LCtrl-J"] = "enter"
 
     # 削除
     keymap_global["LCtrl-H"] = "D-Shift", "U-Shift", "back", "U-ctrl", "U-Shift"
@@ -35,7 +35,7 @@ def configure(keymap):
     # 範囲選択・カット・コピー・ペースト・スクロール
     keymap_global["LCtrl-K"] = (
         "D-Shift",
-        "D-CMD",
+        "D-Cmd",
         "Right",
         "U-Shift",
         "LCmD-x",
@@ -44,7 +44,7 @@ def configure(keymap):
     )
 
     # TAB
-    keymap_global["LCtrl-I"] = "TAB", "U-Ctrl", "U-S"
+    keymap_global["LCtrl-I"] = "TAB"
 
     # =================================================
     # Xキー押下後の動作

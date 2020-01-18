@@ -25,8 +25,8 @@ def configure(keymap):
     keymap_global["LCtrl-S"] = "Cmd-F", "U-Cmd", "U-Shift"
 
     # 改行
-    keymap_global["LCtrl-M"] = "enter"
-    keymap_global["LCtrl-J"] = "enter"
+    keymap_global["LCtrl-M"] = "Enter"
+    keymap_global["LCtrl-J"] = "Enter"
 
     # 削除
     keymap_global["LCtrl-H"] = "D-Shift", "U-Shift", "back", "U-ctrl", "U-Shift"

@@ -1,4 +1,4 @@
-﻿import sys
+import sys
 import os
 import datetime
 import subprocess
@@ -7,11 +7,24 @@ from keyhac import *
 
 
 def configure(keymap):
-    # Global keymap which affects any windows
     keymap.editor = r"/usr/local/Cellar/macvim/8.1-161/MacVim.app"
 
-    # カーソルの移動
+    # Global keymap which affects any windows
     keymap_global = keymap.defineWindowKeymap()
+
+    # =================================================
+    # BetterTouchTools用の設定
+    # =================================================
+    # F18(Code:79) -> タブを閉じるなど
+    keymap_global["(79)"] = "LCmd-W"
+
+    # F16(Code106) -> 左のタブへ移動など
+    keymap_global["(106)"] = "LCtrl-Shift-TAB"
+
+    # F17(Code:64) -> 右のタブへ移動など
+    keymap_global["(64)"] = "Ctrl-TAB"
+
+    # カーソルの移動
     keymap_global["LCtrl-A"] = "D-Cmd", "Left", "U-Cmd"
     keymap_global["LCtrl-Shift-A"] = "D-Cmd", "D-Shift", "Left", "U-Cmd", "U-Shift"
     keymap_global["LCtrl-E"] = "D-Cmd", "Right", "U-Cmd"

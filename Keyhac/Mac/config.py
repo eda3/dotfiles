@@ -24,6 +24,9 @@ def configure(keymap):
     # F17(Code:64) -> 右のタブへ移動など
     keymap_global["(64)"] = "Ctrl-TAB"
 
+    # =================================================
+    # 左Ctrlキー押下時
+    # =================================================
     # カーソルの移動
     keymap_global["LCtrl-A"] = "D-Cmd", "Left", "U-Cmd"
     keymap_global["LCtrl-Shift-A"] = "D-Cmd", "D-Shift", "Left", "U-Cmd", "U-Shift"
@@ -58,6 +61,19 @@ def configure(keymap):
 
     # TAB
     keymap_global["LCtrl-I"] = "TAB"
+
+    # 左Ctrlキーの一部のCmdキー代わりにする
+    # CtrlとCmdを入れ替えない理由は右CmdはCmdとして使いたいため
+    keymap_global["LCtrl-C"] = "Cmd-C", "U-Cmd"
+    keymap_global["LCtrl-L"] = "Cmd-L", "U-Cmd"
+    keymap_global["LCtrl-T"] = "Cmd-T", "U-Cmd"
+    keymap_global["LCtrl-V"] = "Cmd-V", "U-Cmd"
+    keymap_global["LCtrl-Z"] = "Cmd-Z", "U-Cmd"
+
+    # 0-9はCtrlキーを使用
+    for i in range(9):
+        i = str(i)
+        keymap_global["LCtrl-" + i ] = "Cmd-" + i, "U-Cmd"
 
     # =================================================
     # Xキー押下後の動作

@@ -48,16 +48,18 @@ def configure(keymap):
     keymap_global["LCtrl-H"] = "D-Shift", "U-Shift", "back", "U-ctrl", "U-Shift"
     keymap_global["LCtrl-D"] = "delete", "U-Ctrl", "U-Shift"
 
-    # 範囲選択・カット・コピー・ペースト・スクロール
+    # カット
     keymap_global["LCtrl-K"] = (
         "D-Shift",
         "D-Cmd",
         "Right",
         "U-Shift",
         "LCmD-x",
-        "U-ctrl",
         "U-Shift",
+        "U-Cmd",
     )
+    keymap_global["LCtrl-W"] = "Cmd-X", "U-Cmd"
+
 
     # TAB
     keymap_global["LCtrl-I"] = "TAB"

@@ -1,12 +1,6 @@
 alias ls='ls -G'
-
 alias ll="ls -la"
 alias ltr="ls -ltra"
-
-alias vimrc='vim ~/.vimrc'
-
-alias .b='. ~/.bashrc'
-alias .v='. ~/.bashrc'
 
 
 # git関連エイリアス
@@ -37,16 +31,13 @@ alias py='python3'
 alias pip='pip3'
 alias .ve='. ./venv/bin/activate'
 
-
 # =========== プロンプト変更 ===============
 # 参考【Bash】ターミナルのプロンプトのカスタマイズ方法まとめ - Qiita https://qiita.com/hmmrjn/items/60d2a64c9e5bf7c0fe60
-
 # Gitブランチ名を表示
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
 
 PS1="\W \$ "
-# PS1="eda: $ "
 
 # Gitブランチの状況を*+%で表示
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -63,12 +54,6 @@ function add_line {
   fi
 }
 PROMPT_COMMAND='add_line'
-
-
-
-
-
-
 
 # brew dockerの警告文削除用
 alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:/} brew"
@@ -87,19 +72,17 @@ export PATH=$PATH:$GOPATH/bin
 # hub alias
 eval "$(hub alias -s)"
 
-# Macアプリケーション
+# ターミナル入力ショートカット系
+alias vimrc='vim ~/.vimrc'
+alias .b='. ~/.bashrc'
+alias .v='. ~/.bashrc'
 alias vv="open /Applications/Vivaldi.app"
-
 alias e='~/Dropbox/Documents/python_english_words_20190117/src/english_words.py'
-
 alias cdhugo="cd ~/Dropbox/hugo"
 alias cdhg="cd ~/Dropbox/hugo"
-
-
 alias vkara="code ~/.config/karabiner/karabiner.json"
 
-
-
+# python.jpの検索をコマンド指定
 p() { open "https://www.google.co.jp/search?domains=python.jp&sitesearch=python.jp&sourceid=google-search&q=$*"; }
 
 # brew caskでインストールするソフトを/Applicationsに設定

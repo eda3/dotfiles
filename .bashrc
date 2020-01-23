@@ -80,6 +80,8 @@ alias vv="open /Applications/Vivaldi.app"
 alias e='~/Dropbox/Documents/python_english_words_20190117/src/english_words.py'
 alias cdhugo="cd ~/Dropbox/hugo"
 alias cdhg="cd ~/Dropbox/hugo"
+alias hg="cd ~/Dropbox/hugo"
+alias dot="cd ~/Dropbox/Dotfiles"
 alias vkara="code ~/.config/karabiner/karabiner.json"
 
 # python.jpの検索をコマンド指定

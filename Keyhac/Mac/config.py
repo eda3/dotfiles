@@ -118,3 +118,8 @@ def configure(keymap):
     # Vim使ったりPython書いたりするときに便利なため
     keymap_global["Semicolon"] = "Shift-Semicolon"
     keymap_global["Shift-Semicolon"] = "Semicolon"
+
+    # '(シングルクォート)と"(ダブルクォート)を入れ替え
+    # 基本的に引用符はダブルクォートしか使わないため
+    keymap_global["Quote"] = "Shift-Quote"
+    keymap_global["Shift-Quote"] = "Quote"

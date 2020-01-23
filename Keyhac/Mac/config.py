@@ -113,3 +113,8 @@ def configure(keymap):
 
     # Shift + ¥(93) : ~(チルダ)
     keymap_global["Shift-(93)"] = "Shift-BackQuote"
+
+    # :(コロン)と;(セミコロン)を入れ替え
+    # Vim使ったりPython書いたりするときに便利なため
+    keymap_global["Semicolon"] = "Shift-Semicolon"
+    keymap_global["Shift-Semicolon"] = "Semicolon"

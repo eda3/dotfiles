@@ -103,3 +103,13 @@ def configure(keymap):
     keymap_global["User0-H"] = "D-Shift", "Asterisk", "U-Shift"
     # 英数 + J : /
     keymap_global["User0-J"] = "slash"
+
+    # =================================================
+    # その他
+    # =================================================
+
+    # ¥(93) : `(バッククォート)
+    keymap_global["(93)"] = "BackQuote"
+
+    # Shift + ¥(93) : ~(チルダ)
+    keymap_global["Shift-(93)"] = "Shift-BackQuote"

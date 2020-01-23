@@ -11,6 +11,7 @@ alias .v='. ~/.bashrc'
 
 # git関連エイリアス
 alias g='git'
+alias ga='git add'
 alias gaa='git add -A'
 alias gb='git branch'
 alias gl='git log --oneline --decorate --graph --branches --tags --remotes --name-status -5'

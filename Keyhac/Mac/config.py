@@ -78,6 +78,12 @@ def configure(keymap):
         keymap_global["LCtrl-" + i ] = "Cmd-" + i, "U-Cmd"
 
     # =================================================
+    # 左Cmdキー押下時
+    # =================================================
+    # iTermなどでCtrl + Cを使えるようにするため
+    keymap_global["LCmd-C"] = "Ctrl-C", "U-Ctrl"
+
+    # =================================================
     # Xキー押下後の動作
     # =================================================
     keymap_global["LCtrl-X"] = keymap.defineMultiStrokeKeymap("LCtrl-X")

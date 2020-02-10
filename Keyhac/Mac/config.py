@@ -131,6 +131,9 @@ def configure(keymap):
     keymap_global["User1-Shift-Ctrl-K"] = "Shift-Cmd-Up"
     keymap_global["User1-Shift-Ctrl-L"] = "Shift-Cmd-Right"
 
+    # 変換 + ; -> Enter
+    keymap_global["User1-Semicolon"] = "Enter"
+
     # =================================================
     # その他
     # =================================================

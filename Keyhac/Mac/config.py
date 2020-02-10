@@ -111,6 +111,27 @@ def configure(keymap):
     keymap_global["User0-J"] = "slash"
 
     # =================================================
+    # かなキー(104)押下時
+    # =================================================
+    keymap.defineModifier("104", "User1")
+    # かな単独 : IME-ON
+    keymap_global["O-(104)"] = "104"
+
+    # 英数 + HJKL : ←↑↓→
+    keymap_global["User1-H"] = "Left"
+    keymap_global["User1-J"] = "Down"
+    keymap_global["User1-K"] = "Up"
+    keymap_global["User1-L"] = "Right"
+    keymap_global["User1-Shift-H"] = "Shift-Left"
+    keymap_global["User1-Shift-J"] = "Shift-Down"
+    keymap_global["User1-Shift-K"] = "Shift-Up"
+    keymap_global["User1-Shift-L"] = "Shift-Right"
+    keymap_global["User1-Shift-Ctrl-H"] = "Shift-Cmd-Left"
+    keymap_global["User1-Shift-Ctrl-J"] = "Shift-Cmd-Down"
+    keymap_global["User1-Shift-Ctrl-K"] = "Shift-Cmd-Up"
+    keymap_global["User1-Shift-Ctrl-L"] = "Shift-Cmd-Right"
+
+    # =================================================
     # その他
     # =================================================
 

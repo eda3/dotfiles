@@ -117,7 +117,7 @@ def configure(keymap):
     # かな単独 : IME-ON
     keymap_global["O-(104)"] = "104"
 
-    # 英数 + HJKL : ←↑↓→
+    # かな + HJKL : ←↑↓→
     keymap_global["User1-H"] = "Left"
     keymap_global["User1-J"] = "Down"
     keymap_global["User1-K"] = "Up"
@@ -131,7 +131,7 @@ def configure(keymap):
     keymap_global["User1-Shift-Ctrl-K"] = "Shift-Cmd-Up"
     keymap_global["User1-Shift-Ctrl-L"] = "Shift-Cmd-Right"
 
-    # 変換 + ; -> Enter
+    # かな + ; -> Enter
     keymap_global["User1-Semicolon"] = "Enter"
 
     # =================================================

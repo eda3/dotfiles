@@ -36,6 +36,10 @@ def configure(keymap):
     keymap_global["LCtrl-B"] = "Left"
     keymap_global["LCtrl-P"] = "Up"
     keymap_global["LCtrl-N"] = "Down"
+    keymap_global["LCtrl-Shift-F"] = "Shift-Right"
+    keymap_global["LCtrl-Shift-B"] = "Shift-Left"
+    keymap_global["LCtrl-Shift-P"] = "Shift-Up"
+    keymap_global["LCtrl-Shift-N"] = "Shift-Down"
 
     # 検索
     keymap_global["LCtrl-S"] = "Cmd-F", "U-Cmd", "U-Shift"

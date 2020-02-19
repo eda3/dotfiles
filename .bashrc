@@ -83,6 +83,7 @@ alias cdhg="cd ~/Dropbox/hugo"
 alias hg="cd ~/Dropbox/hugo"
 alias dot="cd ~/Dropbox/Dotfiles"
 alias vkara="code ~/.config/karabiner/karabiner.json"
+alias sc="shellcheck"
 
 # python.jpの検索をコマンド指定
 p() { open "https://www.google.co.jp/search?domains=python.jp&sitesearch=python.jp&sourceid=google-search&q=$*"; }

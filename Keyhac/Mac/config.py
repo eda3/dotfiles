@@ -108,10 +108,6 @@ def configure(keymap):
     keymap_global["User0-N"] = "Add"
     # 英数 + M : -
     keymap_global["User0-M"] = "Minus"
-    # 英数 + H : *
-    keymap_global["User0-H"] = "D-Shift", "Asterisk", "U-Shift"
-    # 英数 + J : /
-    keymap_global["User0-J"] = "slash"
 
     # =================================================
     # かなキー(104)押下時

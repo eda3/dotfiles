@@ -64,7 +64,6 @@ def configure(keymap):
     )
     keymap_global["LCtrl-W"] = "Cmd-X", "U-Cmd"
 
-
     # TAB
     keymap_global["LCtrl-I"] = "TAB"
 
@@ -79,7 +78,7 @@ def configure(keymap):
     # 0-9はCtrlキーを使用
     for i in range(9):
         i = str(i)
-        keymap_global["LCtrl-" + i ] = "Cmd-" + i, "U-Cmd"
+        keymap_global["LCtrl-" + i] = "Cmd-" + i, "U-Cmd"
 
     # =================================================
     # 左Cmdキー押下時

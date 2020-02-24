@@ -38,6 +38,7 @@ brew cask install slack
 brew cask install dropbox
 brew cask install box-sync
 brew cask install google-backup-and-sync
+brew cask install onedrive
 
 # ディスク使用量視覚化
 brew cask install disk-inventory-x

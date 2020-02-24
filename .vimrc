@@ -263,3 +263,6 @@ nnoremap <C-e><C-r> :!rails test %<ENTER>
 " python を実行
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!py %
 "nnoremap <C-e> :!py %<ENTER>
+
+
+let $BASH_ENV="~/.bashrc"

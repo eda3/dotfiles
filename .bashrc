@@ -1,3 +1,4 @@
+shopt -s expand_aliases
 alias ls='ls -G'
 alias ll="ls -la"
 alias ltr="ls -ltra"

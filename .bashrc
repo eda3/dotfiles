@@ -58,6 +58,7 @@ PROMPT_COMMAND='add_line'
 
 if [ "$(uname)" == "Linux" ]; then
     OS="Linux"
+    eval $(~/.linuxbrew/bin/brew shellenv)
 else
     OS="Mac"
     # brew dockerの警告文削除用

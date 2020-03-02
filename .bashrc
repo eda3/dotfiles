@@ -56,8 +56,14 @@ function add_line {
 }
 PROMPT_COMMAND='add_line'
 
-# brew dockerの警告文削除用
-alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:/} brew"
+if [ "$(uname)" == "Linux" ]; then
+    OS="Linux"
+else
+    OS="Mac"
+    # brew dockerの警告文削除用
+    alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:/} brew"
+fi
+
 
 # gitignore テンプレート
 function __gi {

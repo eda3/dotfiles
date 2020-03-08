@@ -84,7 +84,7 @@ def configure(keymap):
     # 左Cmdキー押下時
     # =================================================
     # iTermなどでCtrl + Cを使えるようにするため
-    keymap_global["LCmd-C"] = "Ctrl-C", "U-Ctrl"
+    # keymap_global["LCmd-C"] = "Ctrl-C", "U-Ctrl"
 
     # =================================================
     # Xキー押下後の動作
@@ -125,10 +125,10 @@ def configure(keymap):
     keymap_global["User1-Shift-J"] = "Shift-Down"
     keymap_global["User1-Shift-K"] = "Shift-Up"
     keymap_global["User1-Shift-L"] = "Shift-Right"
-    keymap_global["User1-Shift-Ctrl-H"] = "Shift-Cmd-Left"
-    keymap_global["User1-Shift-Ctrl-J"] = "Shift-Cmd-Down"
-    keymap_global["User1-Shift-Ctrl-K"] = "Shift-Cmd-Up"
-    keymap_global["User1-Shift-Ctrl-L"] = "Shift-Cmd-Right"
+    keymap_global["User1-Shift-Ctrl-H"] = "Shift-Cmd-Left", "U-Shift", "U-Cmd"
+    keymap_global["User1-Shift-Ctrl-J"] = "Shift-Cmd-Down", "U-Shift", "U-Cmd"
+    keymap_global["User1-Shift-Ctrl-K"] = "Shift-Cmd-Up", "U-Shift", "U-Cmd"
+    keymap_global["User1-Shift-Ctrl-L"] = "Shift-Cmd-Right", "U-Shift", "U-Cmd"
 
     # かな + ; -> Enter
     keymap_global["User1-Semicolon"] = "Enter"

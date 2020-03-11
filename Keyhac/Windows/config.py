@@ -130,98 +130,6 @@ def configure(keymap):
     keymap_global["U0-U1-O"] = "9"
     keymap_global["U0-U1-P"] = "0"
     keymap_global["U0-U1-Atmark"] = "Minus"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     keymap_global["U0-U1-S-Atmark"] = "S-BackSlash"
     keymap_global["U0-U1-OpenBracket"] = "S-Minus"
     keymap_global["U0-U1-S-OpenBracket"] = "Add"
@@ -364,7 +272,6 @@ def configure(keymap):
 
     keymap_global["CloseBracket"] = "Yen"
     keymap_global["S-CloseBracket"] = "S-Yen"
-
 
     # 特殊系
     keymap_global["LC-Semicolon"] = "Return"

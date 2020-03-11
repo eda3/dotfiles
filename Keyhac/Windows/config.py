@@ -76,18 +76,18 @@ def configure(keymap):
     keymap_global["U1-C-S-A"] = "C-S-Home", "U-C", "U-S"
     keymap_global["U1-C-S-E"] = "C-S-End", "U-C", "U-S"
 
-    # 変換-N,P -> PageDown, PageUp
+    # 変換-N,M -> PageDown, PageUp
     keymap_global["U1-N"] = "PageDown"
-    keymap_global["U1-P"] = "PageUp"
+    keymap_global["U1-M"] = "PageUp"
 
     keymap_global["U1-C-N"] = "C-PageDown", "U-C"
-    keymap_global["U1-C-P"] = "C-PageUp", "U-C"
+    keymap_global["U1-C-M"] = "C-PageUp", "U-C"
 
     keymap_global["U1-S-N"] = "S-PageDown", "U-S"
-    keymap_global["U1-S-P"] = "S-PageUp", "U-S"
+    keymap_global["U1-S-M"] = "S-PageUp", "U-S"
 
     keymap_global["U1-C-S-N"] = "C-S-PageDown", "U-C", "U-S"
-    keymap_global["U1-C-S-P"] = "C-S-PageUp", "U-C", "U-S"
+    keymap_global["U1-C-S-M"] = "C-S-PageUp", "U-C", "U-S"
 
     # 変換-; -> Enter
     keymap_global["U1-Semicolon"] = "Enter"
@@ -98,14 +98,12 @@ def configure(keymap):
     # =================================================
     # 無変換、変換とQWERTYUIOP[]の組み合わせ
     # =================================================
-    # 変換-QWERT -> !@#$%
-    keymap_global["U1-Q"] = "S-1"
-    keymap_global["U1-W"] = "Atmark"
-    keymap_global["U1-E"] = "S-3"
-    keymap_global["U1-R"] = "S-4"
-    keymap_global["U1-T"] = "S-5"
-
     # 無変換-YUIOP[] -> ^&*()-=
+    keymap_global["U0-Q"] = "S-1"
+    keymap_global["U0-W"] = "Atmark"
+    keymap_global["U0-E"] = "S-3"
+    keymap_global["U0-R"] = "S-4"
+    keymap_global["U0-T"] = "S-5"
     keymap_global["U0-Y"] = "Caret"
     keymap_global["U0-U"] = "S-6"
     keymap_global["U0-I"] = "S-Asterisk"
@@ -115,6 +113,22 @@ def configure(keymap):
     keymap_global["U0-S-Atmark"] = "S-BackSlash"
     keymap_global["U0-OpenBracket"] = "S-Minus"
     keymap_global["U0-S-OpenBracket"] = "Add"
+
+    # 変換-QWERTYUIOP[] -> !@#$%^&*()-=
+    keymap_global["U1-Q"] = "S-1"
+    keymap_global["U1-W"] = "Atmark"
+    keymap_global["U1-E"] = "S-3"
+    keymap_global["U1-R"] = "S-4"
+    keymap_global["U1-T"] = "S-5"
+    keymap_global["U1-Y"] = "Caret"
+    keymap_global["U1-U"] = "S-6"
+    keymap_global["U1-I"] = "S-Asterisk"
+    keymap_global["U1-O"] = "S-8"
+    keymap_global["U1-P"] = "S-9"
+    keymap_global["U1-Atmark"] = "Minus"
+    keymap_global["U1-S-Atmark"] = "S-BackSlash"
+    keymap_global["U1-OpenBracket"] = "S-Minus"
+    keymap_global["U1-S-OpenBracket"] = "Add"
 
     # =================================================
     # 無変換、変換の同時押し

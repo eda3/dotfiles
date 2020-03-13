@@ -1,8 +1,3 @@
-import sys
-import os
-import datetime
-import subprocess
-
 from keyhac import *
 
 

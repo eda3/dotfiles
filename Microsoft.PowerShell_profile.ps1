@@ -1,6 +1,3 @@
-$env:DISCORD_BOT_TOKEN="NTcyNzMxMjEzOTI4NzI2NTM4.XXjHcg.vpjFtv08mQHCA74ae7tlnDIYjlM"
-
-
 function touch {
     New-Item -type file $args
 }

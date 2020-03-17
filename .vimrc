@@ -87,9 +87,6 @@ autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
 call smartinput_endwise#define_default_rules()
 
-nnoremap <Space>ig :IndentGuidesToggle
-"let g:indent_guides_enable_on_vim_startup = 1
-
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -151,10 +148,29 @@ set shiftwidth=2
 " http://qiita.com/shirochan/items/174c3169344043449339
 set formatoptions-=ro
 
-"個人的に便利だと思うVimの基本設定のランキングを発表します！ -
-"プログラムモグモグ http://itchyny.hatenablog.com/entry/2014/12/25/090000
-" y$をYにする
-nnoremap Y y$
+" 検索結果をハイライトする http://kaworu.jpn.org/kaworu/2010-11-20-1.php
+set hlsearch
+
+" search インクリメンタルサーチを使う方法 http://kaworu.jpn.org/kaworu/2010-11-21-1.php
+set incsearch
+
+set encoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
+
+" クリップボード連携
+" MacのVimでHomebrewを使ってクリップボード連携を有効にする - Qiita http://qiita.com/shoma2da/items/92ea8badcd4655b6106c
+set clipboard+=unnamed
+
+" vimから編集中のrubyスクリプトを実行 - Qiita http://qiita.com/smison/items/2ee7aaa88299f6972c52
+nnoremap <C-e> :!ruby %<ENTER>
+nnoremap <C-e><C-r> :!rails test %<ENTER>
+
+" python を実行
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!py %
+"nnoremap <C-e> :!py %<ENTER>
+
+nnoremap <Space>ig :IndentGuidesToggle
 
 "インクリメント、デクリメント
 nnoremap + <C-a>
@@ -175,19 +191,11 @@ nnoremap <Space>l  $
 nnoremap <Space>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') \| endfor<CR>
 nnoremap <Space>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
-
 " vim-fugitive関連
 " vim-fugitiveがやっぱり便利 - Qiit http://qiita.com/hyshhryk/items/4936c4412daa866daf7d
 nnoremap <silent> <Space>gb :Gblame<CR>
 nnoremap <silent> <Space>gd :Gdiff<CR>
 nnoremap <silent> <Space>gs :Gstatus<CR>
-
-
-
-" クリップボード連携
-" MacのVimでHomebrewを使ってクリップボード連携を有効にする - Qiita http://qiita.com/shoma2da/items/92ea8badcd4655b6106c
-set clipboard+=unnamed
-
 
 " Command + j or k で行を移動する
 nnoremap <D-j> :m+<CR>==
@@ -195,6 +203,11 @@ nnoremap <D-k> :m-2<CR>==
 inoremap <D-j> <Esc>:m+<CR>==gi
 inoremap <D-k> <Esc>:m-2<CR>==gi
 vnoremap <D-j> :m'>+<CR>gv=gv
+
+"個人的に便利だと思うVimの基本設定のランキングを発表します！ -
+"プログラムモグモグ http://itchyny.hatenablog.com/entry/2014/12/25/090000
+" y$をYにする
+nnoremap Y y$
 
 
 " 【Vim】80桁教信者の憂鬱 その２（ホットキーでトグル、他） | blog.remora.cx http://blog.remora.cx/2013/06/source-in-80-columns-2.html
@@ -204,23 +217,5 @@ noremap <Plug>(ToggleColorColumn)
  
 " ノーマルモードの 'cc' に割り当てる
 nmap cc <Plug>(ToggleColorColumn)
-
-" 検索結果をハイライトする http://kaworu.jpn.org/kaworu/2010-11-20-1.php
-set hlsearch
-
-" search インクリメンタルサーチを使う方法 http://kaworu.jpn.org/kaworu/2010-11-21-1.php
-set incsearch
-
-set encoding=utf-8
-set fileencodings=utf-8
-set fileformats=unix,dos,mac
-
-" vimから編集中のrubyスクリプトを実行 - Qiita http://qiita.com/smison/items/2ee7aaa88299f6972c52
-nnoremap <C-e> :!ruby %<ENTER>
-nnoremap <C-e><C-r> :!rails test %<ENTER>
-
-" python を実行
-autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!py %
-"nnoremap <C-e> :!py %<ENTER>
 
 let $BASH_ENV="~/.bashrc"

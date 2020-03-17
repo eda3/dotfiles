@@ -1,4 +1,3 @@
-syntax on
 
 " =====================================================================================================
 " vim-plug インストールするときは[:PlugInstall]
@@ -50,7 +49,7 @@ call plug#begin('~/.vim/plugged')
   map g/ <Plug>(incsearch-stay)
 
   " vimでautocloseの設定をする - SundayHacking http://www.axlight.com/mt/sundayhacking/2015/02/vimautoclose.html
-"  Plug 'cohama/lexima.vim'
+  " Plug 'cohama/lexima.vim'
 
   " vimで複数選択を可能にするプラグイン - Qiita http://qiita.com/Shunsuke-Komuta/items/c978a4bf5cbb020dca1d
   Plug 'terryma/vim-multiple-cursors'
@@ -80,6 +79,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'davidhalter/jedi-vim', {'for': 'python'}   " pythonファイルを編集するときだけ起動
 
 call plug#end()
+
+syntax on
 
 " TypeScript
 autocmd BufRead,BufNewFile *.ts set filetype=typescript

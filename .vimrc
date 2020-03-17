@@ -1,114 +1,23 @@
 
-" =====================================================================================================
-" vim-plug インストールするときは[:PlugInstall]
-" =====================================================================================================
-" NeoBundle から vim-plug に乗り換えてみた - Qiita http://qiita.com/jiminko/items/f4b337ab41db751388f7
-
-if has('lvim_starting')
-  set rtp+=~/.vim/plugged/vim-plug
-  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
-    echo 'install vim-plug...'
-    call system('mkdir -p ~/.vim/plugged/vim-plug')
-    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
-  end
-endif
-
-call plug#begin('~/.vim/plugged')
-  Plug 'junegunn/vim-plug',
-        \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
-
-  " Unite.Vim タブ一覧出せる
-  Plug 'Shougo/unite.vim'
-
-  " vim-fugitive git関連
-  Plug 'tpope/vim-fugitive'
-
-  " lightline.vim ステータス部分強化
-  Plug 'itchyny/lightline.vim'
-
-  " vim-indent-guides インデントに色を塗ってくれる
-  colorscheme molokai
-  Plug 'nathanaelkane/vim-indent-guides'
-
-  " vim-gitgutter gitの差分を表示してくれる
-  " Vimメモ : vim-gitgutterで差分を左端に表示する - もた日記 http://wonderwall.hatenablog.com/entry/2016/03/26/211710
-  Plug 'airblade/vim-gitgutter'
-
-  " surround.vimの使い方 | Memo on the Web http://motw.mods.jp/Vim/surround.html
-  " yss" - クォートをつける
-  " ds"  - クォートをけす
-  " di"  - クォート内の文を消す
-  " dit  - タグを消す
-  Plug 'tpope/vim-surround'
-
-  " vimの検索でマルチインクリメンタルハイライトを実現するincsearch.vim -
-  " http://kaworu.jpn.org/vim/vim%E3%81%AE%E6%A4%9C%E7%B4%A2%E3%81%A7%E3%83%9E%E3%83%AB%E3%83%81%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8Bincsearch.vim
-  Plug 'haya14busa/incsearch.vim'
-  map /  <Plug>(incsearch-forward)
-  map ?  <Plug>(incsearch-backward)
-  map g/ <Plug>(incsearch-stay)
-
-  " vimでautocloseの設定をする - SundayHacking http://www.axlight.com/mt/sundayhacking/2015/02/vimautoclose.html
-  " Plug 'cohama/lexima.vim'
-
-  " vimで複数選択を可能にするプラグイン - Qiita http://qiita.com/Shunsuke-Komuta/items/c978a4bf5cbb020dca1d
-  Plug 'terryma/vim-multiple-cursors'
-
-  " tcomment.vim拡張してコメントアウトの効率あげる話 - Qiita http://qiita.com/alpaca_taichou/items/211cd62bee84c59ca480
-  " <C-_><C-_> 行、選択箇所をコメントをトグル
-  " <C-_>n 指定したftでコメントをトグル
-  " <C-_>s 詳細にコメント形式を指定してトグル
-  " <C-_>p 関数などブロック全体をトグル
-  " gcc 　　<C-_><C-_>と一緒
-  Plug 'tomtom/tcomment_vim'
-
-  " vimにNeoBundleとNeoCompleteを入れる - KayaMemo http://kayakuguri.github.io/blog/2015/12/24/neobundle-neocomplete/
-  Plug 'Shougo/neobundle.vim'
-
-  " 対応する括弧等を入力する生活に疲れた(Vim 編) - TIM Labs http://labs.timedia.co.jp/2012/09/vim-smartinput.html 
-  Plug 'kana/vim-smartinput'
-
-  " Vim で Ruby の def end とかを自動入力する vim-endwise を vim-smartinput で実装してみた - 反省はしても後悔はしない http://cohama.hateblo.jp/entry/2013/11/08/013136
-  Plug 'cohama/vim-smartinput-endwise'
-
-  " TypeScript を vim に導入して Syntax Highlight する · GitHub https://gist.github.com/uupaa/9224470
-  Plug 'leafgarland/typescript-vim'
-
-  " 【VimとPythonの補完についてのメモ】
-  " https://kashewnuts.github.io/2018/08/22/jedivim_memo.html
-  Plug 'davidhalter/jedi-vim', {'for': 'python'}   " pythonファイルを編集するときだけ起動
-
-call plug#end()
-
 syntax on
 
 " TypeScript
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 
-call smartinput_endwise#define_default_rules()
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4 "タブのスペース数
+set shiftwidth=4 "インデント時のスペース数"
 set expandtab
+set nu " 行番号表示
 
-" vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup=1
-" ガイドをスタートするインデントの量
-let g:indent_guides_start_level=2
-" 自動カラーを無効にする
-let g:indent_guides_auto_colors=0
-" 奇数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
-" 偶数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
-" ハイライト色の変化の幅
-let g:indent_guides_color_change_percent = 30
-" ガイドの幅
-let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup=1 " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_start_level=2 " ガイドをスタートするインデントの量
+let g:indent_guides_auto_colors=0 " 自動カラーを無効にする
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray " 奇数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray " 偶数インデントのカラー
+let g:indent_guides_color_change_percent = 30 " ハイライト色の変化の幅
+let g:indent_guides_guide_size = 1 " ガイドの幅
 
-
-" 行番号表示
-:set nu
 
 " 折り返さない(戻すときは :set nowrap)
 :set nowrap 
@@ -219,3 +128,86 @@ noremap <Plug>(ToggleColorColumn)
 nmap cc <Plug>(ToggleColorColumn)
 
 let $BASH_ENV="~/.bashrc"
+
+" =====================================================================================================
+" vim-plug インストールするときは[:PlugInstall]
+" =====================================================================================================
+" NeoBundle から vim-plug に乗り換えてみた - Qiita http://qiita.com/jiminko/items/f4b337ab41db751388f7
+
+if has('lvim_starting')
+  set rtp+=~/.vim/plugged/vim-plug
+  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+    echo 'install vim-plug...'
+    call system('mkdir -p ~/.vim/plugged/vim-plug')
+    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+  end
+endif
+
+call plug#begin('~/.vim/plugged')
+  Plug 'junegunn/vim-plug',
+        \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+
+  " Unite.Vim タブ一覧出せる
+  Plug 'Shougo/unite.vim'
+
+  " vim-fugitive git関連
+  Plug 'tpope/vim-fugitive'
+
+  " lightline.vim ステータス部分強化
+  Plug 'itchyny/lightline.vim'
+
+  " vim-indent-guides インデントに色を塗ってくれる
+  colorscheme molokai
+  Plug 'nathanaelkane/vim-indent-guides'
+
+  " vim-gitgutter gitの差分を表示してくれる
+  " Vimメモ : vim-gitgutterで差分を左端に表示する - もた日記 http://wonderwall.hatenablog.com/entry/2016/03/26/211710
+  Plug 'airblade/vim-gitgutter'
+
+  " surround.vimの使い方 | Memo on the Web http://motw.mods.jp/Vim/surround.html
+  " yss" - クォートをつける
+  " ds"  - クォートをけす
+  " di"  - クォート内の文を消す
+  " dit  - タグを消す
+  Plug 'tpope/vim-surround'
+
+  " vimの検索でマルチインクリメンタルハイライトを実現するincsearch.vim -
+  " http://kaworu.jpn.org/vim/vim%E3%81%AE%E6%A4%9C%E7%B4%A2%E3%81%A7%E3%83%9E%E3%83%AB%E3%83%81%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8Bincsearch.vim
+  Plug 'haya14busa/incsearch.vim'
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
+
+  " vimでautocloseの設定をする - SundayHacking http://www.axlight.com/mt/sundayhacking/2015/02/vimautoclose.html
+  " Plug 'cohama/lexima.vim'
+
+  " vimで複数選択を可能にするプラグイン - Qiita http://qiita.com/Shunsuke-Komuta/items/c978a4bf5cbb020dca1d
+  Plug 'terryma/vim-multiple-cursors'
+
+  " tcomment.vim拡張してコメントアウトの効率あげる話 - Qiita http://qiita.com/alpaca_taichou/items/211cd62bee84c59ca480
+  " <C-_><C-_> 行、選択箇所をコメントをトグル
+  " <C-_>n 指定したftでコメントをトグル
+  " <C-_>s 詳細にコメント形式を指定してトグル
+  " <C-_>p 関数などブロック全体をトグル
+  " gcc 　　<C-_><C-_>と一緒
+  Plug 'tomtom/tcomment_vim'
+
+  " vimにNeoBundleとNeoCompleteを入れる - KayaMemo http://kayakuguri.github.io/blog/2015/12/24/neobundle-neocomplete/
+  Plug 'Shougo/neobundle.vim'
+
+  " 対応する括弧等を入力する生活に疲れた(Vim 編) - TIM Labs http://labs.timedia.co.jp/2012/09/vim-smartinput.html 
+  Plug 'kana/vim-smartinput'
+
+  " Vim で Ruby の def end とかを自動入力する vim-endwise を vim-smartinput で実装してみた - 反省はしても後悔はしない http://cohama.hateblo.jp/entry/2013/11/08/013136
+  Plug 'cohama/vim-smartinput-endwise'
+
+  " TypeScript を vim に導入して Syntax Highlight する · GitHub https://gist.github.com/uupaa/9224470
+  Plug 'leafgarland/typescript-vim'
+
+  " 【VimとPythonの補完についてのメモ】
+  " https://kashewnuts.github.io/2018/08/22/jedivim_memo.html
+  Plug 'davidhalter/jedi-vim', {'for': 'python'}   " pythonファイルを編集するときだけ起動
+
+call plug#end()
+
+call smartinput_endwise#define_default_rules()

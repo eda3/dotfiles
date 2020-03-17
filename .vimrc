@@ -175,46 +175,6 @@ nnoremap <Space>o  :<C-u>for i in range(v:count1) \| call append(line('.'), '') 
 nnoremap <Space>O  :<C-u>for i in range(v:count1) \| call append(line('.')-1, '') \| endfor<CR>
 
 
-" " Vimの便利な画面分割＆タブページと、それを更に便利にする方法 - Qiita http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
-" nnoremap s <Nop>
-" " 別のタブへ:w
-" " カーソル移動
-" nnoremap sj <C-w>j
-" nnoremap sk <C-w>k
-" nnoremap sl <C-w>l
-" nnoremap sh <C-w>h
-" 
-" " 窓を移動
-" nnoremap sJ <C-w>J
-" nnoremap sK <C-w>K
-" nnoremap sL <C-w>L
-" nnoremap sH <C-w>H
-" 
-" " 次のタブへ
-" nnoremap sn gt
-" " 前のタブへ
-" nnoremap sp gT
-" 
-" nnoremap sr <C-w>r
-" nnoremap s= <C-w>=
-" nnoremap sw <C-w>w
-" nnoremap so <C-w>_<C-w>|
-" nnoremap sO <C-w>=
-" nnoremap sN :<C-u>bn<CR>
-" nnoremap sP :<C-u>bp<CR>
-" nnoremap st :<C-u>tabnew<CR>
-" nnoremap sT :<C-u>Unite tab<CR>
-" " 水平分割 
-" nnoremap ss :<C-u>sp<CR>
-" " 垂直分割
-" nnoremap sv :<C-u>vs<CR>
-" nnoremap sq :<C-u>q<CR>
-" nnoremap sQ :<C-u>bd<CR>
-" nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-" nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-
-
-
 " vim-fugitive関連
 " vim-fugitiveがやっぱり便利 - Qiit http://qiita.com/hyshhryk/items/4936c4412daa866daf7d
 nnoremap <silent> <Space>gb :Gblame<CR>
@@ -261,6 +221,5 @@ nnoremap <C-e><C-r> :!rails test %<ENTER>
 " python を実行
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!py %
 "nnoremap <C-e> :!py %<ENTER>
-
 
 let $BASH_ENV="~/.bashrc"

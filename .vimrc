@@ -114,7 +114,7 @@ noremap <Plug>(ToggleColorColumn)
 " ノーマルモードの 'cc' に割り当てる
 nmap cc <Plug>(ToggleColorColumn)
 
-let $BASH_ENV="~/.bashrc"
+let $BASH_ENV='~/.bashrc'
 
 " =====================================================================================================
 " vim-plug インストールするときは[:PlugInstall]

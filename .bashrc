@@ -105,3 +105,10 @@ PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 # brew install gitしたとき用
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
+cmd="brew update"
+echo "$ ${cmd}"
+eval "${cmd}"
+
+cmd="brew upgrade"
+echo "$ ${cmd}"
+eval "${cmd}"

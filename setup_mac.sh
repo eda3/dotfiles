@@ -21,6 +21,7 @@ brew cask install alfred
 brew cask install bettertouchtool
 brew cask install google-japanese-ime
 brew cask install iterm2
+brew cask install hyper
 
 # ブラウザ
 brew cask install vivaldi

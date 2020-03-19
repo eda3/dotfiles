@@ -1,19 +1,8 @@
-import os
 from keyhac import *
 
 
 def configure(keymap):
-    # OS判定用
-    os_str = os.name
-    print("hogehoge")
-    print(os_str)
-    if os.name == "nt":
-        os_str = "win"
-    if os.name == "posix":
-        os_str == "mac"
-
-    if os_str == "mac":
-        keymap.editor = r"/usr/local/Cellar/macvim/8.1-161/MacVim.app"
+    keymap.editor = r"/usr/local/Cellar/macvim/8.1-161/MacVim.app"
 
     # Global keymap which affects any windows
     keymap_global = keymap.defineWindowKeymap()
@@ -22,7 +11,7 @@ def configure(keymap):
     # BetterTouchTools用の設定
     # =================================================
     # F18(Code:79) -> タブを閉じるなど
-    keymap_global["(79)"] = "Cmd-W"
+    keymap_global["(79)"] = "LCmd-W"
 
     # F16(Code106) -> 左のタブへ移動など
     keymap_global["(106)"] = "LCtrl-Shift-TAB"
@@ -34,38 +23,32 @@ def configure(keymap):
     # 左Ctrlキー押下時
     # =================================================
     # カーソルの移動
-    # keymap_global["LCmd-A"] = "D-Cmd", "Left", "U-Cmd"
-    keymap_global["Cmd-A"] = "D-Cmd",  "Left", "U-Cmd"
-    keymap_global["Cmd-Shift-A"] = "D-Cmd", "D-Shift", "Left", "U-Cmd", "U-Shift"
-    keymap_global["Cmd-E"] = "D-Cmd", "Right", "U-Cmd"
-    keymap_global["Cmd-Shift-E"] = "D-Cmd", "D-Shift", "Right", "U-Cmd", "U-Shift"
-
-    keymap_global["Cmd-F"] = "Right"
-    keymap_global["Cmd-B"] = "Left"
-    keymap_global["Cmd-P"] = "Up"
-    keymap_global["Cmd-N"] = "Down"
-    keymap_global["Cmd-Shift-F"] = "Shift-Right"
-    keymap_global["Cmd-Shift-B"] = "Shift-Left"
-    keymap_global["Cmd-Shift-P"] = "Shift-Up"
-    keymap_global["Cmd-Shift-N"] = "Shift-Down"
+    keymap_global["LCtrl-A"] = "D-Cmd", "Left", "U-Cmd"
+    keymap_global["LCtrl-Shift-A"] = "D-Cmd", "D-Shift", "Left", "U-Cmd", "U-Shift"
+    keymap_global["LCtrl-E"] = "D-Cmd", "Right", "U-Cmd"
+    keymap_global["LCtrl-Shift-E"] = "D-Cmd", "D-Shift", "Right", "U-Cmd", "U-Shift"
+    keymap_global["LCtrl-F"] = "Right"
+    keymap_global["LCtrl-B"] = "Left"
+    keymap_global["LCtrl-P"] = "Up"
+    keymap_global["LCtrl-N"] = "Down"
+    keymap_global["LCtrl-Shift-F"] = "Shift-Right"
+    keymap_global["LCtrl-Shift-B"] = "Shift-Left"
+    keymap_global["LCtrl-Shift-P"] = "Shift-Up"
+    keymap_global["LCtrl-Shift-N"] = "Shift-Down"
 
     # 検索
-    if os_str == "mac":
-        keymap_global["Cmd-S"] = "Cmd-F", "U-Cmd", "U-Shift"
-    elif os_str == "win":
-        keymap_global["Cmd-S"] = "Ctrl-F", "U-Ctrl"
+    keymap_global["LCtrl-S"] = "Cmd-F", "U-Cmd", "U-Shift"
 
     # 改行
-    keymap_global["Cmd-M"] = "Enter"
-    keymap_global["Cmd-J"] = "Enter"
+    keymap_global["LCtrl-M"] = "Enter"
+    keymap_global["LCtrl-J"] = "Enter"
 
     # 削除
-    keymap_global["Cmd-H"] = "D-Shift", "U-Shift", "back", "U-ctrl", "U-Shift"
-    keymap_global["Cmd-D"] = "delete", "U-Ctrl", "U-Shift"
-
+    keymap_global["LCtrl-H"] = "D-Shift", "U-Shift", "back", "U-ctrl", "U-Shift"
+    keymap_global["LCtrl-D"] = "delete", "U-Ctrl", "U-Shift"
 
     # カット
-    keymap_global["Cmd-K"] = (
+    keymap_global["LCtrl-K"] = (
         "D-Shift",
         "D-Cmd",
         "Right",
@@ -74,14 +57,13 @@ def configure(keymap):
         "U-Shift",
         "U-Cmd",
     )
-    keymap_global["Cmd-W"] = "Cmd-X", "U-Cmd"
+    keymap_global["LCtrl-W"] = "Cmd-X", "U-Cmd"
 
     # TAB
-    keymap_global["Cmd-I"] = "TAB"
+    keymap_global["LCtrl-I"] = "TAB"
 
     # 左Ctrlキーの一部のCmdキー代わりにする
     # CtrlとCmdを入れ替えない理由は右CmdはCmdとして使いたいため
-    """
     keymap_global["LCtrl-C"] = "Cmd-C", "U-Cmd"
     keymap_global["LCtrl-L"] = "Cmd-L", "U-Cmd"
     keymap_global["LCtrl-T"] = "Cmd-T", "U-Cmd"
@@ -92,7 +74,6 @@ def configure(keymap):
     for i in range(9):
         i = str(i)
         keymap_global["LCtrl-" + i] = "Cmd-" + i, "U-Cmd"
-    """
 
     # =================================================
     # 左Cmdキー押下時
@@ -103,13 +84,13 @@ def configure(keymap):
     # =================================================
     # Xキー押下後の動作
     # =================================================
-    keymap_global["LCmd-X"] = keymap.defineMultiStrokeKeymap("LCtrl-X")
+    keymap_global["LCtrl-X"] = keymap.defineMultiStrokeKeymap("LCtrl-X")
 
     # 保存
-    keymap_global["LCmd-X"]["LCmd-S"] = "Cmd-S", "U-Cmd"
+    keymap_global["LCtrl-X"]["LCtrl-S"] = "Cmd-S", "U-Cmd"
 
     # アプリを閉じる
-    keymap_global["LCmd-X"]["LCmd-C"] = "Cmd-W", "U-Cmd"
+    keymap_global["LCtrl-X"]["LCtrl-C"] = "Cmd-W", "U-Cmd"
 
     # =================================================
     # 英数キー(102)押下時

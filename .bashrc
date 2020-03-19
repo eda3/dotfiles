@@ -112,3 +112,7 @@ eval "${cmd}"
 cmd="brew upgrade;"
 echo "$ ${cmd}"
 eval "${cmd}"
+
+
+# rustup
+export PATH="${PATH}:${HOME}/.cargo/bin"

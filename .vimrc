@@ -1,18 +1,34 @@
+set encoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
 
+" 色関係
 syntax on
+colorscheme desert
 
-" TypeScript
-autocmd BufRead,BufNewFile *.ts set filetype=typescript
-
-
+" インデント
 set tabstop=4 " タブのスペース数
 set shiftwidth=4 " インデント時のスペース数
 set expandtab " タブ文字をスペースにする
-set nu " 行番号表示
+set smartindent " インデントをスマートに
+set shiftround
+set softtabstop=4
+
+
+set ambiwidth=double " □や○文字が崩れる問題を解決
 
 let g:indent_guides_enable_on_vim_startup=1 " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_start_level=2 " ガイドをスタートするインデントの量
 let g:indent_guides_auto_colors=0 " 自動カラーを無効にする
+
+
+" 行番号
+set nu " 行番号表示
+set relativenumber " 相対距離
+" F3で相対、絶対表示の切り替え
+nnoremap <F3> :<C-u>setlocal relativenumber!<CR>" F3で相対、絶対表示の切り替え
+
+
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray " 奇数インデントのカラー
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray " 偶数インデントのカラー
 let g:indent_guides_color_change_percent = 30 " ハイライト色の変化の幅
@@ -28,10 +44,15 @@ set noswapfile " スワップファイルを作らない
 set autoread " 編集中のファイルが変更されたら自動で読み直す
 set hidden " バッファが編集中でもその他のファイルを開けるように
 set showcmd " 入力中のコマンドをステータスに表示する
-
 set cursorline " 現在の行を強調表示
+set showmatch " 括弧入力時の対応する括弧を表示
+set matchtime=1 
+set matchpairs& matchpairs+=<:> " HTMLタグを対応
 
-set smartindent " インデントをスマートに
+
+" プラグイン無しでとりあえずvimrcを配置したい時用のvimrc https://gist.github.com/Hiroya-W/8d6f6dd6667f14b8182c2144c68fdcd3
+set list listchars=tab:\▸\- " 不可視文字を可視化(タブが「▸-」と表示される)
+
 
 set laststatus=2 " ステータスラインを常に表示
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
@@ -41,19 +62,26 @@ set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v
 " http://qiita.com/shirochan/items/174c3169344043449339
 set formatoptions-=ro
 
-" 検索結果をハイライトする http://kaworu.jpn.org/kaworu/2010-11-20-1.php
-set hlsearch
 
-" search インクリメンタルサーチを使う方法 http://kaworu.jpn.org/kaworu/2010-11-21-1.php
-set incsearch
+" =====================================================================================================
+" 検索系
+" =====================================================================================================
+set ignorecase " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+set smartcase " 検索文字列に大文字が含まれている場合は区別して検索する
+set incsearch " 検索文字列入力時に順次対象文字列にヒットさせる
+set wrapscan " 検索時に最後まで行ったら最初に戻る
+set hlsearch " 検索語をハイライト表示
 
-set encoding=utf-8
-set fileencodings=utf-8
-set fileformats=unix,dos,mac
+" ESCキー2度押しでハイライトの切り替え
+nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 
-" クリップボード連携
+
+" =====================================================================================================
+" クリップボード
+" =====================================================================================================
 " MacのVimでHomebrewを使ってクリップボード連携を有効にする - Qiita http://qiita.com/shoma2da/items/92ea8badcd4655b6106c
 set clipboard+=unnamed
+set clipboard=unnamed,autoselect
 
 " =====================================================================================================
 " キーバインド

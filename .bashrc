@@ -44,7 +44,10 @@ shopt -s expand_aliases
 alias ls='ls -G --color=auto'
 alias ll="ls -la"
 alias ltr="ls -ltra"
-
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias d="cd ~/dotfiles"
 
 # git関連エイリアス
 alias g='git'
@@ -125,9 +128,8 @@ eval "$(hub alias -s)"
 
 # ターミナル入力ショートカット系
 alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
 alias .b='. ~/.bashrc'
-alias .v='. ~/.bashrc'
-alias vv="open /Applications/Vivaldi.app"
 alias e='~/Dropbox/Documents/python_english_words_20190117/src/english_words.py'
 alias cdhugo="cd ~/Dropbox/hugo"
 alias cdhg="cd ~/Dropbox/hugo"
@@ -150,13 +152,17 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
-# cmd="brew update;"
-# echo "$ ${cmd}"
-# eval "${cmd}"
 
-# cmd="brew upgrade;"
-# echo "$ ${cmd}"
-# eval "${cmd}"
+if type brew >/dev/null 2>&1; then
+  cmd="brew update;"
+  echo "$ ${cmd}"
+  eval "${cmd}"
+
+  cmd="brew upgrade;"
+  echo "$ ${cmd}"
+  eval "${cmd}"
+fi
+
 
 
 # rustup
@@ -187,3 +193,5 @@ alias cr="cargo run"
 alias cw="cargo-watch --poll -x fmt -x clippy -x run"
 
 alias idea='/mnt/c/Program\ Files/JetBrains/RustRover\ 233.11799.306/bin/rustrover64.exe'
+
+cd ~

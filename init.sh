@@ -18,3 +18,6 @@ git clone -b template https://github.com/kohbis/mac-ansible.git ${ANSIBLE_PATH}
 ## ansible
 cd "${ANSIBLE_PATH}" || exit
 # ansible-playbook -i inventory/localhost localhost.yml
+
+# locateを使えるようにする
+sudo -E apt install locate

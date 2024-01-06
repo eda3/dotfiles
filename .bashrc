@@ -112,20 +112,6 @@ alias .ve='. ./venv/bin/activate'
 #fi
 
 
-# gitignore テンプレート
-function __gi {
-  curl -L -s https://www.gitignore.io/api/$@ >> ./.gitignore
-}
-
-alias gi=__gi
-
-# golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# hub alias
-eval "$(hub alias -s)"
-
 # ターミナル入力ショートカット系
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'

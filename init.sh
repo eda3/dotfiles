@@ -31,6 +31,11 @@ create_symlinks() {
 # インストール対象の設定やツールのインストール処理を追加
 install_dependencies() {
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    sudo snap install docker
+
+    # gitの初期処理
+    git config --global user.email "gerorin1010@gmail.com"
+    git config --global user.name "eda3"
 
 }
 
@@ -38,8 +43,5 @@ install_dependencies() {
 create_symlinks
 install_dependencies
 
-# gitの初期処理
-git config --global user.email "gerorin1010@gmail.com"
-git config --global user.name "eda3"
 
 echo "Installation completed."

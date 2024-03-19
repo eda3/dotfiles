@@ -183,3 +183,4 @@ alias idea='/mnt/c/Program\ Files/JetBrains/RustRover\ 233.11799.306/bin/rustrov
 export PS1="[\u@\w]\$ "
 
 cd ~
+

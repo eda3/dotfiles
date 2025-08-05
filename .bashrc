@@ -183,7 +183,6 @@ alias idea='/mnt/c/Program\ Files/JetBrains/RustRover\ 233.11799.306/bin/rustrov
 <<<<<<< HEAD
 export PS1="[\u@\w]\$ "
 
-cd ~
 =======
 # bun
 export BUN_INSTALL="$HOME/.bun"

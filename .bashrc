@@ -193,3 +193,6 @@ fi
 
 # zoxide
 eval "$(zoxide init bash --cmd cd)"
+
+# starship
+eval "$(starship init bash)"

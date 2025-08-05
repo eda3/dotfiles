@@ -172,7 +172,7 @@ export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig"
 
 # Rust関係
 alias cb="cargo build"
-alias cc="cargo clippy"
+alias cc="cargo clippy -- -W clippy::pedantic "
 alias cf="cargo fmt"
 alias cn="cargo new"
 alias cr="cargo run"
@@ -180,7 +180,19 @@ alias cw="cargo-watch --poll -x fmt -x clippy -x run"
 
 alias idea='/mnt/c/Program\ Files/JetBrains/RustRover\ 233.11799.306/bin/rustrover64.exe'
 
+<<<<<<< HEAD
 export PS1="[\u@\w]\$ "
 
 cd ~
+=======
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+>>>>>>> 2e1318a (remove , add bun, add fnm)
 
+# fnm
+FNM_PATH="/home/eda/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi

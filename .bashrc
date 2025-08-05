@@ -183,7 +183,6 @@ alias idea='/mnt/c/Program\ Files/JetBrains/RustRover\ 233.11799.306/bin/rustrov
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
->>>>>>> 2e1318a (remove , add bun, add fnm)
 
 # fnm
 FNM_PATH="/home/eda/.local/share/fnm"

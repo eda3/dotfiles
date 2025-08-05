@@ -180,10 +180,6 @@ alias cw="cargo-watch --poll -x fmt -x clippy -x run"
 
 alias idea='/mnt/c/Program\ Files/JetBrains/RustRover\ 233.11799.306/bin/rustrover64.exe'
 
-<<<<<<< HEAD
-export PS1="[\u@\w]\$ "
-
-=======
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

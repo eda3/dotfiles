@@ -196,3 +196,5 @@ eval "$(zoxide init bash --cmd cd)"
 
 # starship
 eval "$(starship init bash)"
+
+alias vw="vi ~/.wezterm.lua"

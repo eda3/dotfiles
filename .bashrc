@@ -40,7 +40,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-shopt -s expand_aliases
+# shopt -s expand_aliases
 alias ls='ls -G --color=auto'
 alias ll="ls -la"
 alias ltr="ls -ltra"
